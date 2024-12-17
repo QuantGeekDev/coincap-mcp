@@ -4,6 +4,8 @@
 
 Allows you to query crypto information from coincap's public API - no API keys or registration required
 
+<a href="https://glama.ai/mcp/servers/sg1ysa9nrk"><img width="380" height="200" src="https://glama.ai/mcp/servers/sg1ysa9nrk/badge" alt="coincap-mcp MCP server" /></a>
+
 ## 🚀 Quick Start
 
 To get started, add this configuration to your Claude Desktop config file:
