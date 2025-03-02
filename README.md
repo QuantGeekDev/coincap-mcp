@@ -1,4 +1,5 @@
 # Coincap MCP
+[![smithery badge](https://smithery.ai/badge/coincap-mcp)](https://smithery.ai/server/coincap-mcp)
 
 [![smithery badge](https://smithery.ai/badge/coincap-mcp)](https://smithery.ai/server/coincap-mcp)
 
@@ -7,7 +8,15 @@
 Allows you to query crypto information from coincap's public API - no API keys or registration required
 
 ## 🚀 Quick Start
+### Installing via Smithery
 
+To install Coincap for Claude Desktop automatically via [Smithery](https://smithery.ai/server/coincap-mcp):
+
+```bash
+npx -y @smithery/cli install coincap-mcp --client claude
+```
+
+### Installing Manually
 To get started, add this configuration to your Claude Desktop config file:
 
 **MacOS**: `~/Library/Application\ Support/Claude/claude_desktop_config.json`  
