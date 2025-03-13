@@ -18,7 +18,7 @@ class ListAssetsTool extends BaseToolImplementation {
 
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error("Error fetching coincap data");
+        throw new Error(`Error fetching coincap data: ${response.status} ${response.statusText}`);
       }
 
       const body = await response.json();

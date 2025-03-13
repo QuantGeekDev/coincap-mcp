@@ -16,7 +16,7 @@ class BitcoinPriceTool extends BaseToolImplementation {
     try {
       const response = await fetch(BITCOIN_PRICE_URL);
       if (!response.ok) {
-        throw new Error("Error fetching coincap data");
+        throw new Error(`Error fetching coincap data: ${response.status} ${response.statusText}`);
       }
 
       const body = await response.json();

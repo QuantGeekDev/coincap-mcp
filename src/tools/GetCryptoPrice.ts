@@ -26,11 +26,16 @@ class GetCryptoPrice extends BaseToolImplementation {
       if (!cryptoName) {
         throw new Error("Missing crypto name");
       }
-      const url = CONSTANTS.CRYPTO_PRICE_URL + cryptoName;
+      
+      // Ensure cryptoName is treated as a string
+      const cryptoNameString = String(cryptoName);
+      // Convert cryptocurrency name to lowercase to ensure API compatibility
+      const cryptoNameLowercase = cryptoNameString.toLowerCase();
+      const url = CONSTANTS.CRYPTO_PRICE_URL + cryptoNameLowercase;
 
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error("Error fetching coincap data");
+        throw new Error(`Error fetching coincap data: ${response.status} ${response.statusText}`);
       }
 
       const body = await response.json();
