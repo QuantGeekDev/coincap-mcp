@@ -1,3 +1,5 @@
+[![MseeP Badge](https://mseep.net/pr/quantgeekdev-coincap-mcp-badge.jpg)](https://mseep.ai/app/quantgeekdev-coincap-mcp)
+
 # Coincap MCP
 
 [![smithery badge](https://smithery.ai/badge/coincap-mcp)](https://smithery.ai/server/coincap-mcp)
