@@ -1,5 +1,6 @@
 # Coincap MCP
 
+[![Trust Score](https://archestra.ai/mcp-catalog/api/badge/quality/QuantGeekDev/coincap-mcp)](https://archestra.ai/mcp-catalog/quantgeekdev__coincap-mcp)
 [![smithery badge](https://smithery.ai/badge/coincap-mcp)](https://smithery.ai/server/coincap-mcp)
 
 ## What does this server do?
