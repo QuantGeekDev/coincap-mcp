@@ -4,11 +4,15 @@
 
 ## What does this server do?
 
-Allows you to query crypto information from coincap's public API - no API keys or registration required
+Allows you to query crypto information from the CoinCap v3 API — real-time prices, market caps, and asset data for 1,000+ cryptocurrencies.
 
 ## 🚀 Quick Start
 
-To get started, add this configuration to your Claude Desktop config file:
+### 1. Get an API Key
+
+CoinCap v3 requires authentication. Get a free key (50 credits) at [pro.coincap.io/dashboard](https://pro.coincap.io/dashboard).
+
+### 2. Configure Claude Desktop
 
 **MacOS**: `~/Library/Application\ Support/Claude/claude_desktop_config.json`  
 **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
@@ -16,9 +20,12 @@ To get started, add this configuration to your Claude Desktop config file:
 ```json
 {
   "mcpServers": {
-    "mongodb": {
+    "coincap-mcp": {
       "command": "npx",
-      "args": ["coincap-mcp"]
+      "args": ["coincap-mcp"],
+      "env": {
+        "COINCAP_API_KEY": "your-api-key-here"
+      }
     }
   }
 }
@@ -36,8 +43,15 @@ npx -y @smithery/cli install coincap-mcp --client claude
 
 - Node.js 18+
 - npx
+- CoinCap API key (free tier available)
 
 Then, launch Claude Desktop and you're ready to go!
+
+## Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `COINCAP_API_KEY` | Yes | CoinCap v3 API key. Get one free at [pro.coincap.io](https://pro.coincap.io/dashboard) |
 
 ## Sample Prompts
 
@@ -53,11 +67,11 @@ Gets price for Bitcoin specifically, it's a simple example of a primitive API ca
 
 #### Get Crypto Price Tool
 
-Gets price for any cryptocurrency available on coincap API. It's a good example of how to get mandatory parameter data for your tool calls
+Gets price for any cryptocurrency available on CoinCap API. It's a good example of how to get mandatory parameter data for your tool calls
 
 #### List Assets
 
-Gets a list of all crypto assets available in coincap API
+Gets a list of all crypto assets available in the CoinCap API
 
 ## Development - local build
 
@@ -70,7 +84,10 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 {
   "mcpServers": {
     "coincap-mcp": {
-      "command": "/path/to/coincap-mcp/build/index.js"
+      "command": "/path/to/coincap-mcp/build/index.js",
+      "env": {
+        "COINCAP_API_KEY": "your-api-key-here"
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import { Tool } from "@modelcontextprotocol/sdk/types.js";
-import { BITCOIN_PRICE_URL } from "../constants.js";
+import { CONSTANTS, getHeaders } from "../constants.js";
 import { BaseToolImplementation } from "./BaseTool.js";
 
 class BitcoinPriceTool extends BaseToolImplementation {
@@ -14,20 +14,32 @@ class BitcoinPriceTool extends BaseToolImplementation {
 
   toolCall = async () => {
     try {
-      const response = await fetch(BITCOIN_PRICE_URL);
+      const response = await fetch(CONSTANTS.BITCOIN_PRICE_URL, {
+        headers: getHeaders(),
+      });
+      if (response.status === 401 || response.status === 403) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: "Authentication required. Set COINCAP_API_KEY environment variable. Get a free key at https://pro.coincap.io/dashboard",
+            },
+          ],
+        };
+      }
       if (!response.ok) {
-        throw new Error("Error fetching coincap data");
+        throw new Error(`CoinCap API error: ${response.status} ${response.statusText}`);
       }
 
       const body = await response.json();
 
       return {
-        content: [{ type: "text", text: `${JSON.stringify(body.data)}` }],
+        content: [{ type: "text", text: JSON.stringify(body.data) }],
       };
     } catch (error) {
       return {
         content: [
-          { type: "error", text: JSON.stringify((error as any).message) },
+          { type: "text", text: `Error: ${(error as any).message}` },
         ],
       };
     }
