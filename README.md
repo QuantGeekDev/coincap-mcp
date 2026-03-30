@@ -99,3 +99,8 @@ npm run watch
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Hosted deployment
+
+A hosted deployment is available on [Fronteir AI](https://fronteir.ai/mcp/quantgeekdev-coincap-mcp).
+
