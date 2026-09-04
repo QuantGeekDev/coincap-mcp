@@ -1,6 +1,6 @@
 # Coincap MCP
 
-[![smithery badge](https://smithery.ai/badge/coincap-mcp)](https://smithery.ai/server/coincap-mcp)
+[![LightNow](https://lightnow.ai/badge/io.github.quantgeekdev/coincap-mcp)](https://lightnow.ai/servers/io.github.quantgeekdev/coincap-mcp)
 
 ## What does this server do?
 
